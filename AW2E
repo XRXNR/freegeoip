@@ -1,0 +1,53 @@
+<?php
+$name = $_GET['name']; 
+$nn ="https://forebears.io/forenames/$name";
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://forebears.io/forenames/$name");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
+curl_setopt($ch, CURLOPT_ENCODING, 'gzip, deflate');
+
+$headers = array();
+$headers[] = 'Authority: forebears.io';
+$headers[] = 'Cache-Control: max-age=0';
+$headers[] = 'Sec-Ch-Ua: \" Not A;Brand\";v=\"99\", \"Chromium\";v=\"96\"';
+$headers[] = 'Sec-Ch-Ua-Mobile: ?1';
+$headers[] = 'Sec-Ch-Ua-Platform: \"Android\"';
+$headers[] = 'Upgrade-Insecure-Requests: 1';
+$headers[] = 'User-Agent: Mozilla/5.0 (Linux; Android 11; M2101K6I) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.46 Mobile Safari/537.36';
+$headers[] = 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9';
+$headers[] = 'Sec-Fetch-Site: none';
+$headers[] = 'Sec-Fetch-Mode: navigate';
+$headers[] = 'Sec-Fetch-User: ?1';
+$headers[] = 'Sec-Fetch-Dest: document';
+$headers[] = 'Accept-Language: ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7';
+$headers[] = 'Cookie: ezoadgid_284274=-1; ezoref_284274=; ezosuibasgeneris-0=53c05867408bda73807a6dbca36ec0fd; ezoab_284274=mod1; ezovid_284274=1669692715; lp_284274=$nn; ezovuuid_284274=b3418ed7-1fda-444c-4719-4eae6f0bc85f; active_template::284274=pub_site.1641232010; ezopvc_284274=4; ezepvv=21; ezovuuidtime_284274=1641232011; __gads=ID=d394e41d998d1cb5:T=1641232016:S=ALNI_MbHYDvWLQ_aozdHKbA44IJ-lJzjPg; _pbjs_userid_consent_data=3524755945110770; ezouspvv=0; ezouspva=0; ezds=ffid%3D2%2Cw%3D393%2Ch%3D873; ezohw=w%3D393%2Ch%3D783; id5id.1st=%7B%22created_at%22%3A%222022-01-03T17%3A47%3A13.677984Z%22%2C%22id5_consent%22%3Atrue%2C%22original_uid%22%3A%22ID5*-Fg9CKGEBOpd7fTk59tGm06VTx-6G7CD6W0uzbIuLckDtGNqpAYOkK4af4KkPid6A7XpUqrdCRKX5pkOJ6pnEwO2x_hcyhCnyiptbexDdJ0Dt-dHhdL5q2eppx8NmTWfA7ggEg1YyrdlBGboGKcIOgO5txTADLscycaniOfsvGgDup_C3_lzzXM7vII2ylwgA7vI6SRZa6grkrqsImG0NQO8YUWK5VMQtGh1aQsQRKkDvWbQv-aWKbD1DZFs64uVA77TKYBDYEjmny10DtYYtQO_s7pYKgwLm4IU73OMx-gDwD0nlHLAW9sSGzaOI0GaA8G5nMVWptukdr0p6E1GCgPCzQ0ofsAHiElZT_yMKBkDw9kQhBCiPeYq9R8hmXR4A8SyS0XaVYKhdpgPxC9vvAPFRNQDoPlzu50EiKOImy0DxnhPljFho10KEd5MiHQsA8e921mbWmNONzHZun7mCAPIVy2kFMjrHquOh-gl8uoDyX1_h36s8BrhECczJ2NvA8rsENNDuWdR-TtBzftmKQ%22%2C%22universal_uid%22%3A%22ID5*7c5_dWePQZM4jrpY3oz1awaR0cozVP5-EUEO3p3QPD8DtKVKjAP1nsCo_MqLvDDZA7WaGTRrM1kwrHKXGQA_iAO2wDOUDYkQQiRM3uVomg8Dt6HWrn_O9KZULvDeAEDSA7ihpXgwla2J-22y6emGFwO5xbBM0StE7rOOx6_x5t8Duqii76ga2n5NneyMxzdFA7vglAZd1DlFbNyWs3-0rwO8QnfT7O4QW8mohpEL2UQDvf-c0h5AekqR5NoTeVSnA74EGTplrZFehTguPwjGjAO_Dzf9fNq0pacMvbie_7ADwIHlZi2S80nc8nKC-esVA8HZJVnUUz3uZGJyXIQImgPCLjFcCl4_THNHKzWHg38Dw3tlVRCAk4HjFCsyDM1WA8Rm21ICaog2VdDO0keOigPFtQdqKmF4_Woq3R_PJvsDxqokAZZAKACPVcIvzqkeA8cXjtYMgFLFEt6alCoB1wPIT8_VRoVCri_VxmSRXXwDyV5_yPgRVHqDenpA7umcA8p_4o9725rIM-p5yj062w%22%2C%22signature%22%3A%22ID5_AYKb-FyCzcU68wky4axeVhwZ25GTZZvWfGVWajn4Rea8j1smeeEtigYJokJxf3hoY4Ltc0_b7eZRhO1JLW93CQI%22%2C%22link_type%22%3A2%2C%22cascade_needed%22%3Atrue%2C%22privacy%22%3A%7B%22jurisdiction%22%3A%22other%22%2C%22id5_consent%22%3Atrue%7D%7D; id5id.1st_last=Mon%2C%2003%20Jan%202022%2017%3A47%3A13%20GMT; cto_bundle=UIiVGV9acnF6NyUyQlp5RHdIN2tzaU9FcU8lMkZjaTYyTmVDU2R2bmhrem9pZFlSNTkydkpQUU5sRndabmhveDlLS211RUdadGp4SkhWRDFBc1ZSNnpraWNaSUhiTzRxdVpWWXFwSzFqS0phRlNCeWFDZVBXVXgyVmdPWjJuaUdSYjFxYkh0VUU; cto_bidid=19HacV9PZkRuZDdHWTY3dSUyRlFNN25sUFlEMiUyRlhKeUpXVWt4ZFBQWkY5emtjYVloT2tvJTJGSTRDbCUyQkF2MmtzckZQMklLZiUyQjlmc0h6UEYlMkZJY3FTTXJLUzF5VmxIZyUzRCUzRA; ezux_et_284274=0; ezux_tos_284274=45';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+    echo 'Error:' . curl_error($ch);
+}
+curl_close($ch);
+file_put_contents('ff.txt',$result);
+$cc = $result;
+$cc =str_replace('center">','',$cc);
+$cc =str_replace('<span class="accent"><b>','',$cc);
+$cc =str_replace('</b></span>','',$cc);
+$cc =str_replace('</p>','',$cc);
+$cc = str_replace('"',"'",$cc);
+$cc = str_replace("<sup>","'",$cc);
+$cc = str_replace('</sup>',"'",$cc);
+$cc = str_replace("'",'',$cc);
+file_put_contents('rr.txt',$cc);
+$preg_cc = preg_match_all("/class=text-Approximately (.*?)people bear this name<div/",$cc,$c);
+$gg = $c[1][0];
+if($gg ==""){
+$json = array('count'=>"Error!!!!!!!");
+Echo json_encode($json,JSON_UNESCAPED_UNICODE); 
+}else{
+$json = array('count'=>"$gg");
+Echo json_encode($json,JSON_UNESCAPED_UNICODE); 
+} 
